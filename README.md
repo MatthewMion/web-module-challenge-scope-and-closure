@@ -59,6 +59,9 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+  -Closure is when an inner functions reaches out to grab a value that is defined in the outer function.
+
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -80,8 +83,13 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  -Where the nested  function reaches out to personalDice() for the name.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+  -The name will stay the same but the newRoll may change value.
+
 c. What is the lexical scope of `newRoll`? 
+  -only inside the inner function.
 
 
 ### Task 3 - Stretch Goals
