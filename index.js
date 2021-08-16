@@ -169,10 +169,6 @@ function scoreboard(getInningScore, inning, numberOfInnings) {
     let currentScoreStr =  `Inning ${i} Away ${currentScore.Away} - Home ${currentScore.Home}`
      eachInningScore.push(currentScoreStr);
   }
-
-  function randomInt(){
-    return Math.floor(Math.random() * 5 + 1);
-  }
   if(totalScores.Home === totalScores.Away){
     eachInningScore.push(`This game will require extra innings: Away ${totalScores.Away} - Home ${totalScores.Home}`);
   } else {
