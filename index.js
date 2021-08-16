@@ -108,8 +108,8 @@ function getInningScore(callback) {
     Home: 0,
     Away: 0 
   }
-  inningScore.Home += callback()
-  inningScore.Away += callback()
+  inningScore.Home = callback()
+  inningScore.Away = callback()
 
   return inningScore;
 }
@@ -156,11 +156,29 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScore, inning, numberOfInnings) {
+  const eachInningScore =[];
+  const totalScores= {
+    Home: 0,
+    Away: 0,
+  }
+  for(let i=1; i<=numberOfInnings;i++){
+    let currentScore = getInningScore(inning)
+    totalScores.Home += currentScore.Home;
+    totalScores.Away += currentScore.Away;
+    let currentScoreStr =  `Inning ${i} Away ${currentScore.Away} - Home ${currentScore.Home}`
+     eachInningScore.push(currentScoreStr);
+  }
+
+  
+  if(totalScores.Home === totalScores.Away){
+    eachInningScore.push(`This game will require extra innings: Away ${totalScores.Away} - Home ${totalScores.Home}`);
+  } else {
+    eachInningScore.push( `Final Score: Away ${totalScores.Away} - Home ${totalScores.Home}`)
+  }
+  return eachInningScore;
 }
-
-
+console.log(scoreboard(getInningScore, inning, 9));
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
